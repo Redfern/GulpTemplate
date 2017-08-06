@@ -12,7 +12,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
-    livereload = require('gulp-livereload'),
     del = require('del');
 
 // Styles
@@ -21,18 +20,16 @@ gulp.task('styles', function () {
       .pipe(autoprefixer('last 2 version'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(cssnano())
-      .pipe(gulp.dest('wwwroot/css'))
-      .pipe(notify({ message: 'Styles task complete' }));
+      .pipe(gulp.dest('.'))
 });
 
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src(['wwwroot/js/*.js', 'wwwroot/js/modules/*.js'])
+    return gulp.src(['js/*.js', 'js/modules/*.js'])
       .pipe(concat('site.js'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(uglify())
-      .pipe(gulp.dest('wwwroot/js'))
-      .pipe(notify({ message: 'Scripts task complete' }));
+      .pipe(gulp.dest('.'));
 });
 
 gulp.task('default', function () {
@@ -44,5 +41,5 @@ gulp.task('watch', function () {
     gulp.watch('sass/**/*.scss', ['styles']);
 
     // Watch .js files
-    gulp.watch(['wwwroot/js/*.js', 'wwwroot/js/modules/*.js'], ['scripts']);
+    gulp.watch(['js/*.js', 'js/modules/*.js'], ['scripts']);
 });

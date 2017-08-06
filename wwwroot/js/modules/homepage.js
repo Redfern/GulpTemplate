@@ -1,3 +1,0 @@
-function aFunctionTodoSomething() {
-  // do something
-}
