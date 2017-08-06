@@ -23,12 +23,16 @@ For sass files, you can input sass in the /sass/site.scss or in /sass/modules/* 
 
 You can add a new module in the /sass/modules dir and include it in the site.scss file using "@import "modules/heading";"
 
+The minified file will be place in the root called site.min.css
+
 ### Javascript
 
-For js files, you can input js in the /wwwroot/js/site.js file or in the /wwwroot/js/modules/* dir.
+For js files, you can input js in the /js/site.js file or in the /js/modules/* dir.
 
 To add a new module you just need to include it in the modules dir and gulp will automatically pick it up.
 
+The minified file will be place in the root called site.min.js
+
 ## Other
 
-`/// <binding ProjectOpened='watch' />` is included at the top of the file for intergration with Visual Studio 2015 to automatically run the watch when the project gets opened.
+`/// <binding ProjectOpened='watch' />` is included at the top of the file for integration with Visual Studio 2015 to automatically run the watch when the project gets opened.
