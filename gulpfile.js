@@ -25,7 +25,7 @@ gulp.task('styles', function () {
 
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src(['js/*.js', 'js/modules/*.js'])
+    return gulp.src(['js/*.js', 'js/modules/*.js', '!js/**/*.min.js'])
       .pipe(concat('site.js'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(uglify())
